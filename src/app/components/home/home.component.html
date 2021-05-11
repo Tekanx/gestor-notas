@@ -1,1 +1,24 @@
-<p>home works!</p>
+<form action="get">
+    <ul>
+        <li>
+            <label for="titulo">Titulo<br></label>
+            <input name="titulo" type="text" placeholder="Nota">
+        </li>
+        <li>
+            <label for="estado">Estado<br></label>
+            <select name="estado">
+                <option value="" selected>Select</option>
+                <option value="">Abierto</option>
+                <option value="">En Proceso</option>
+                <option value="">Cerrado</option>
+            </select>
+        </li>
+        <li>
+            <label for="Descripcion">Descripción<br></label>
+            <textarea name="descripcion" id="" cols="30" rows="10"></textarea>
+        </li>
+        <li>
+            <a [routerLink]="['/notas']" routerLinkActive="router-link-active"><button class="button">Crear</button></a>
+        </li>
+    </ul>
+</form>

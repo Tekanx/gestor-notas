@@ -1,1 +1,12 @@
-<p>header works!</p>
+<mat-toolbar>
+    <button mat-button [matMenuTriggerFor]="menu" id="btn"><mat-icon>menu</mat-icon></button>
+    <mat-menu #menu="matMenu">
+        <a [routerLink]="['/notas']" routerLinkActive="router-link-active">
+            <button mat-menu-item>Notas</button>
+        </a>
+        <a [routerLink]="['/']" routerLinkActive="router-link-active">
+            <button mat-menu-item>Agregar/Actualizar Notas</button>
+        </a>
+    </mat-menu>
+    <span id="texto">Mis Notas</span>
+  </mat-toolbar>
