@@ -1,13 +1,19 @@
-.abierto{
-    background-color: red;
+ul li{
+    list-style-type: none;
+    margin:10px;
+    font: oblique 18px cursive;
+    
+}
+input,select,textarea{
+    margin-top:10px;
+    font: oblique 65% cursive;
+    border:inset;
+    
+    /*border: darkmagenta 4px wave;*/
 }
 
-.enproceso{
-    background-color: yellow;
+textarea:focus, input:focus, input[type]:focus,select:focus {
+    border-color: rgb(255, 144, 0);
+    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075)inset, 0 0 8px rgba(255,144,0,0.6);
+    outline: 0 none;
 }
-
-.cerrado{
-    background-color: blue;
-}
-
-//https://material.angular.io/components/card/overview

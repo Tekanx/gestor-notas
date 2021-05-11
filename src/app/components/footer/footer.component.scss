@@ -1,9 +1,21 @@
+
+.button{
+    width: max-content;
+    position: relative;
+    display: inline-block;
+    font: oblique 15px cursive;
+    border-radius:20px;
+    background-color: rgb(252, 165, 52);
+    color:white;   
+}
+
 .footer{
     background-color: teal;
+    top: 94%;
     width: 100%;
     padding: 20px;
     text-align: center;
-    position: relative;
+    position: fixed;
 }
 
 .footercaja{

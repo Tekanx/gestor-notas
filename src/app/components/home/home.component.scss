@@ -1,26 +1,32 @@
 ul li{
     list-style-type: none;
-    margin:10px;
-    font: oblique 18px cursive;
-    
 }
-input,select,textarea{
-    margin-top:10px;
-    font: oblique 65% cursive;
-    border:inset;
-    
-    /*border: darkmagenta 4px wave;*/
+.abierto{
+    background-color: red;
 }
 
-textarea:focus, input:focus, input[type]:focus,select:focus {
-    border-color: rgb(255, 144, 0);
-    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075)inset, 0 0 8px rgba(255,144,0,0.6);
-    outline: 0 none;
+.enproceso{
+    background-color: yellow;
 }
 
+.cerrado{
+    background-color: blue;
+}
+
+div#caja{
+    position: fixed;
+    top: 90%;
+    left: 47%;
+}
 .button{
+    width: 200px;
+    position: relative;
+    display: inline-block;
     font: oblique 15px cursive;
     border-radius:20px;
     background-color: rgb(252, 165, 52);
-    color:white;   
+    color:white;
+    box-shadow: 2px 2px 2px 1px rgb(157, 208, 214);    
 }
+
+//https://material.angular.io/components/card/overview

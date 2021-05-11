@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as nota from '../../data/data.json';
-import { Nota } from '../../interfaces/nota'
+import { Nota } from '../../interfaces/nota' 
 @Component({
   selector: 'app-notas',
   templateUrl: './notas.component.html',
