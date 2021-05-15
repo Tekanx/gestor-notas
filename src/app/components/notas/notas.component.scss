@@ -11,6 +11,16 @@ input,select,textarea{
     
     /*border: darkmagenta 4px wave;*/
 }
+.button{
+    
+    position: relative;
+    display: inline-block;
+    font: oblique 15px cursive;
+    border-radius:20px;
+    background-color: rgb(252, 165, 52);
+    color:white;
+    box-shadow: 2px 2px 2px 1px rgb(157, 208, 214);    
+}
 
 textarea:focus, input:focus, input[type]:focus,select:focus {
     border-color: rgb(255, 144, 0);

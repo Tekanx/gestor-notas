@@ -11,6 +11,8 @@ import { HomeComponent } from './components/home/home.component';
 import { NotasComponent } from './components/notas/notas.component';
 import { ActualizarComponent } from './components/actualizar/actualizar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import {ReactiveFormsModule} from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +28,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule, 
     MatToolbarModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

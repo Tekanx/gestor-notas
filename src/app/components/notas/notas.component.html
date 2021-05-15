@@ -1,21 +1,24 @@
-<form action="get">
+<form [formGroup]="formulario" (ngSubmit)="EnviarDatos()">
     <ul>
         <li>
             <label for="titulo">Titulo<br></label>
-            <input name="titulo" type="text" placeholder="Nota">
+            <input  formControlName="titulo" type="text" placeholder="Nota">
         </li>
         <li>
             <label for="estado">Estado<br></label>
-            <select name="estado">
-                <option value="" selected>Select</option>
-                <option value="">Abierto</option>
-                <option value="">En Proceso</option>
-                <option value="">Cerrado</option>
+            <select  formControlName="estado">
+                <option value="0" selected>Select</option>
+                <option value="abierto">Abierto</option>
+                <option value="enProceso">En Proceso</option>
+                <option value="cerrado">Cerrado</option>
             </select>
         </li>
         <li>
-            <label for="Descripcion">Descripción<br></label>
-            <textarea name="descripcion" id="" cols="30" rows="10" maxlength="150"></textarea>
+            <label for="descripcion">Descripción<br></label>
+            <textarea  formControlName="descripcion"  cols="30" rows="10" maxlength="150"></textarea>
+        </li>
+        <li>
+            <button class="button" type="submit">Agregar</button>
         </li>
     </ul>
 </form>
