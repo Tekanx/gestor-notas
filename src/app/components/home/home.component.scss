@@ -28,5 +28,14 @@ div#caja{
     color:white;
     box-shadow: 2px 2px 2px 1px rgb(157, 208, 214);    
 }
+ul {
+    padding-top: 2em;
+}
 
-//https://material.angular.io/components/card/overview
+ul li{
+    display: inline-block;
+    height: max-content;
+    width: 30%;
+    list-style-type: none;
+    padding: 8px;
+}
