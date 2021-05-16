@@ -1,6 +1,7 @@
 <ul>
     <li *ngFor = "let nota of ListaNotas" >
-        <mat-card id="card" (onRefresh(nota))=nota>
+        <mat-card id="card" (onRefresh(nota))=nota > 
+          <div [ngClass]="{'abierto': nota.Estado === 'Abierto', 'cerrado': nota.Estado === 'Cerrado','enproceso': nota.Estado === 'Proceso'}">    
             <mat-card-header>
               <mat-card-title class="card-titulo">{{nota.Titulo}}</mat-card-title>
               <mat-card-subtitle class="card-estado">{{nota.Estado}}</mat-card-subtitle>
@@ -11,19 +12,19 @@
               </p>
             </mat-card-content>
             <mat-card-actions>
-              <button mat-button class="btn modificar"><span class="material-icons">edit</span></button>
+              <div *ngIf="nota.Estado!='Cerrado'">
+                <button mat-button class="btn modificar" ><span class="material-icons">edit</span></button>
+              </div>
               <button mat-button class="btn eliminar"><span class="material-icons">delete</span></button>
             </mat-card-actions>
-          </mat-card>
+          </div> 
+        </mat-card>
     </li>
-    <li>
-        
-    </li>
-    <li>
-        
-    </li>
+    
 </ul>
 
 <div id="caja">
-    <button class="button">+  Adicionar</button>
+    <a [routerLink]="['/notas']" routerLinkActive="router-link-active">
+      <button class="button">+  Adicionar</button>
+    </a>
 </div>   
