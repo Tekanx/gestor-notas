@@ -2,7 +2,7 @@
 var express = require('express');
 var notas = require('../../src/app/data/data.json');
 var app = express();
-var port = 3000;
+var port = 4200;
 app.get('/', function (req, res) {
     res.send(notas);
     console.log(notas);

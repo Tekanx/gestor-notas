@@ -9,8 +9,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { NotasComponent } from './components/notas/notas.component';
-import { ActualizarComponent } from './components/actualizar/actualizar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http'
 
 import {ReactiveFormsModule} from '@angular/forms';
 @NgModule({
@@ -19,8 +19,7 @@ import {ReactiveFormsModule} from '@angular/forms';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    NotasComponent,
-    ActualizarComponent
+    NotasComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +29,7 @@ import {ReactiveFormsModule} from '@angular/forms';
     MatIconModule,
     MatMenuModule,
     ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
