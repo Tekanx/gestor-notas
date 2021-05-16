@@ -23,6 +23,6 @@ export class NotasComponent implements OnInit {
   }
 
   EnviarDatos(){
-
+    console.log(this.formulario)
   }
 }
