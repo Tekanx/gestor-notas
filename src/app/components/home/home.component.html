@@ -1,7 +1,7 @@
 <ul>
     <li *ngFor = "let nota of ListaNotas" >
-        <mat-card id="card" (onRefresh(nota))=nota > 
-          <div [ngClass]="{'abierto': nota.Estado === 'Abierto', 'cerrado': nota.Estado === 'Cerrado','enproceso': nota.Estado === 'Proceso'}">    
+        <mat-card class="card" (onRefresh(nota))=nota > 
+          <div [ngClass]="{'abierto': nota.Estado === 'Abierto', 'cerrado': nota.Estado === 'Cerrado','enproceso': nota.Estado === 'Proceso'}">
             <mat-card-header>
               <mat-card-title class="card-titulo">{{nota.Titulo}}</mat-card-title>
               <mat-card-subtitle class="card-estado">{{nota.Estado}}</mat-card-subtitle>

@@ -1,4 +1,4 @@
-<form [formGroup]="formulario" (ngSubmit)="EnviarDatos()">
+<form [formGroup]="formulario" (ngSubmit)="EnviarDatos()" method="POST">
     <ul>
         <li>
             <label for="titulo">Titulo<br></label>
@@ -7,10 +7,10 @@
         <li>
             <label for="estado">Estado<br></label>
             <select  formControlName="estado">
-                <option value="0" disabled selected>Select</option>
-                <option value="abierto">Abierto</option>
-                <option value="enProceso">En Proceso</option>
-                <option value="cerrado">Cerrado</option>
+                <option value="0" selected disabled >Select</option>
+                <option value="Abierto">Abierto</option>
+                <option value="Proceso">En Proceso</option>
+                <option value="Cerrado">Cerrado</option>
             </select>
         </li>
         <li>
@@ -18,7 +18,7 @@
             <textarea  formControlName="descripcion"  cols="30" rows="10" maxlength="150"></textarea>
         </li>
         <li>
-            <button class="button" type="submit">Agregar</button>
+                <button class="button" type="submit">Agregar</button>
         </li>
     </ul>
 </form>

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import {Nota} from '../interfaces/nota'
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,12 @@ export class ServicioNotasService {
 
   getNotas() : Observable<any>{
     return this.service.get(`${this.url}`)
+  }
+
+  GuardarNota(nuevaNota:Array<Nota>):Observable<any>{ 
+    console.log(nuevaNota[0]);
+    //return this.service.post(`${this.url}`,"puño");
+    return this.service.post(`${this.url}`,JSON.stringify(nuevaNota[0]));
   }
 
 }
