@@ -1,10 +1,10 @@
 <ul>
-    <li *ngFor = "let nota of ListaNotas" >
+    <li *ngFor = "let nota of ListaNotasA" >
+      <button class="btnGigante">
         <mat-card class="card" (onRefresh(nota))=nota > 
           <div [ngClass]="{'abierto': nota.Estado === 'Abierto', 'cerrado': nota.Estado === 'Cerrado','enproceso': nota.Estado === 'Proceso'}">
             <mat-card-header>
               <mat-card-title class="card-titulo">{{nota.Titulo}}</mat-card-title>
-              <mat-card-subtitle class="card-estado">{{nota.Estado}}</mat-card-subtitle>
             </mat-card-header>
             <mat-card-content>
               <p class="card-descripcion">
@@ -13,14 +13,60 @@
             </mat-card-content>
             <mat-card-actions>
               <div *ngIf="nota.Estado!='Cerrado'">
-                <button mat-button class="btn modificar" ><span class="material-icons">edit</span></button>
+                <button mat-button class="btnmodificar" ><span class="material-icons">edit</span></button>
               </div>
-              <button mat-button class="btn eliminar"><span class="material-icons">delete</span></button>
+              <button mat-button class="btneliminar"><span class="material-icons">delete</span></button>
             </mat-card-actions>
           </div> 
         </mat-card>
+      </button>
     </li>
-    
+    <br>
+    <li *ngFor = "let nota of ListaNotasP">
+      <button class="btnGigante">
+        <mat-card class="card" (onRefresh(nota))=nota > 
+          <div [ngClass]="{'abierto': nota.Estado === 'Abierto', 'cerrado': nota.Estado === 'Cerrado','enproceso': nota.Estado === 'Proceso'}">
+            <mat-card-header>
+              <mat-card-title class="card-titulo">{{nota.Titulo}}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <p class="card-descripcion">
+                {{nota.Descripcion}}
+              </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <div *ngIf="nota.Estado!='Cerrado'">
+                <button mat-button class="btnmodificar" ><span class="material-icons">edit</span></button>
+              </div>
+              <button mat-button class="btneliminar"><span class="material-icons">delete</span></button>
+            </mat-card-actions>
+          </div> 
+        </mat-card>
+      </button>
+    </li>
+    <br>
+    <li *ngFor = "let nota of ListaNotasC">
+      <button class="btnGigante">
+        <mat-card class="card" (onRefresh(nota))=nota > 
+          <div [ngClass]="{'abierto': nota.Estado === 'Abierto', 'cerrado': nota.Estado === 'Cerrado','enproceso': nota.Estado === 'Proceso'}">
+            <mat-card-header>
+              <mat-card-title class="card-titulo">{{nota.Titulo}}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <p class="card-descripcion">
+                {{nota.Descripcion}}
+              </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <div *ngIf="nota.Estado!='Cerrado'">
+                <button mat-button class="btnmodificar" ><span class="material-icons">edit</span></button>
+              </div>
+              <button mat-button class="btneliminar"><span class="material-icons">delete</span></button>
+            </mat-card-actions>
+          </div> 
+        </mat-card>
+      </button>
+    </li>  
 </ul>
 
 <div id="caja">

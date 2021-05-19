@@ -10,21 +10,31 @@ import { ServicioNotasService } from '../../services/servicio-notas.service'
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  ListaNotas : Array<Nota>=[];
+  ListaNotasA : Array<Nota>=[];
+  ListaNotasP : Array<Nota>=[];
+  ListaNotasC : Array<Nota>=[];
   card = document.getElementById("card")
-  //ListaNotas = nota
+
   constructor(private servicio : ServicioNotasService) {
    }
 
   ngOnInit(): void {
     this.servicio.getNotas().subscribe((notas) => {
       for (let i = 0; i < notas.length; i++) {
-        this.ListaNotas.push(notas[i])
-        
+        if(notas[i].Estado=='Abierto'){
+          this.ListaNotasA.push(notas[i])
+        }
+        else if(notas[i].Estado=='Proceso'){
+          this.ListaNotasP.push(notas[i])
+        }
+        else{
+          this.ListaNotasC.push(notas[i])
+        }
       }
     })
-    console.log(this.ListaNotas)
+    console.log(this.ListaNotasA)
   }
+  
   onRefresh(nota : Nota){
     switch(nota.Estado){
           case "Abierto": {
