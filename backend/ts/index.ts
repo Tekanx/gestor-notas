@@ -19,15 +19,15 @@ app.post('/', (req : any, res : any) =>{
     notas.push(req.body[0]);
 })
 
-app.delete('/', (req : any, res : any) =>{
-    let indice=0;
+app.post('/2', (req : any, res : any) =>{
+    console.log("holii")
     for(let i=0 ; i<notas.length; i++){
-        if (req.body==notas[i]){
-            indice=i;
+        if (req.body.Titulo==notas[i].Titulo){
+            console.log(notas[i]);
+            notas.splice(i,1);
             break
         }
     }
-    notas.splice(indice,0);
 })
 
 

@@ -37,11 +37,9 @@ export class HomeComponent implements OnInit {
   
   Eliminar(notaEliminable:Nota){
     console.log("me quieren sacar tio",nota);
-    /*let NotaDeleteada:Array<Nota>=[];
-    NotaDeleteada.push(notaEliminable);
-    this.servicio.deleteNota(NotaDeleteada).subscribe(notas=>{
+    this.servicio.deleteNota(notaEliminable).subscribe(notas=>{
       console.log(notas); 
-    });*/
+    });
   }
 
 

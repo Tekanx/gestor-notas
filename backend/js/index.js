@@ -15,15 +15,15 @@ app.post('/', function (req, res) {
     console.log(req.body);
     notas.push(req.body[0]);
 });
-app.delete('/', function (req, res) {
-    var indice = 0;
+app.post('/2', function (req, res) {
+    console.log("holii");
     for (var i = 0; i < notas.length; i++) {
-        if (req.body == notas[i]) {
-            indice = i;
+        if (req.body.Titulo == notas[i].Titulo) {
+            console.log(notas[i]);
+            notas.splice(i, 1);
             break;
         }
     }
-    notas.splice(indice, 0);
 });
 app.listen(port, function () {
     console.log("App listening at http://localhost:" + port);

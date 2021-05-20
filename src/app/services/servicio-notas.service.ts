@@ -21,10 +21,11 @@ export class ServicioNotasService {
     return this.service.post(`${this.url}`,nuevaNota);
   }
 
-  /*deleteNota(eliminarNota:Array<Nota>):Observable<any>{
-    
-    console.log(eliminarNota[0]);
-    //return this.service.delete(`${this.url}`,eliminarNota);
-  }*/
+  deleteNota(NotaEliminable:Nota):Observable<any>{ 
+    console.log(NotaEliminable);
+    return this.service.post(`${this.url}2`,NotaEliminable);
+  }
+
+
 
 }
