@@ -35,6 +35,16 @@ export class HomeComponent implements OnInit {
     console.log(this.ListaNotasA)
   }
   
+  Eliminar(notaEliminable:Nota){
+    console.log("me quieren sacar tio",nota);
+    /*let NotaDeleteada:Array<Nota>=[];
+    NotaDeleteada.push(notaEliminable);
+    this.servicio.deleteNota(NotaDeleteada).subscribe(notas=>{
+      console.log(notas); 
+    });*/
+  }
+
+
   onRefresh(nota : Nota){
     switch(nota.Estado){
           case "Abierto": {

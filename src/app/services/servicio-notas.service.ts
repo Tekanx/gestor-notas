@@ -18,8 +18,13 @@ export class ServicioNotasService {
 
   GuardarNota(nuevaNota:Array<Nota>):Observable<any>{ 
     console.log(nuevaNota[0]);
-    //return this.service.post(`${this.url}`,"puño");
-    return this.service.post(`${this.url}`,JSON.stringify(nuevaNota[0]));
+    return this.service.post(`${this.url}`,nuevaNota);
   }
+
+  /*deleteNota(eliminarNota:Array<Nota>):Observable<any>{
+    
+    console.log(eliminarNota[0]);
+    //return this.service.delete(`${this.url}`,eliminarNota);
+  }*/
 
 }

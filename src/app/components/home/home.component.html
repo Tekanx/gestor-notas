@@ -38,7 +38,7 @@
               <div *ngIf="nota.Estado!='Cerrado'">
                 <button mat-button class="btnmodificar" ><span class="material-icons">edit</span></button>
               </div>
-              <button mat-button class="btneliminar"><span class="material-icons">delete</span></button>
+              <button mat-button class="btneliminar" (click)="Eliminar(nota)"><span class="material-icons">delete</span></button>
             </mat-card-actions>
           </div> 
         </mat-card>
