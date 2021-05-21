@@ -23,9 +23,12 @@ export class ServicioNotasService {
 
   deleteNota(NotaEliminable:Nota):Observable<any>{ 
     console.log(NotaEliminable);
-    return this.service.post(`${this.url}2`,NotaEliminable);
+    return this.service.post(`${this.url}borrar`,NotaEliminable);
   }
 
-
+  modificarNota(Notamod:Array<Nota>):Observable<any>{ 
+    console.log(Notamod); //arreglo contiene[nota original,nota modificada]
+    return this.service.post(`${this.url}modificar`,Notamod);
+  } 
 
 }

@@ -15,12 +15,23 @@ app.post('/', function (req, res) {
     console.log(req.body);
     notas.push(req.body[0]);
 });
-app.post('/2', function (req, res) {
-    console.log("holii");
+app.post('/borrar', function (req, res) {
+    console.log("Eliminando", req.body);
     for (var i = 0; i < notas.length; i++) {
-        if (req.body.Titulo == notas[i].Titulo) {
+        if ((req.body.Titulo == notas[i].Titulo) && (req.body.Estado == notas[i].Estado) && (req.body.Descripcion == notas[i].Descripcion)) {
             console.log(notas[i]);
             notas.splice(i, 1);
+            break;
+        }
+    }
+});
+app.post('/modificar', function (req, res) {
+    console.log("Modificando", req.body);
+    for (var i = 0; i < notas.length; i++) {
+        if ((req.body[0].Titulo == notas[i].Titulo) && (req.body[0].Estado == notas[i].Estado) && (req.body[0].Descripcion == notas[i].Descripcion)) {
+            notas[i].Titulo = req.body[1].Titulo;
+            notas[i].Estado = req.body[1].Estado;
+            notas[i].Descripcion = req.body[1].Descripcion;
             break;
         }
     }

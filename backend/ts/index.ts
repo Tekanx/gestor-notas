@@ -19,16 +19,29 @@ app.post('/', (req : any, res : any) =>{
     notas.push(req.body[0]);
 })
 
-app.post('/2', (req : any, res : any) =>{
-    console.log("holii")
+app.post('/borrar', (req : any, res : any) =>{
+    console.log("Eliminando",req.body);
     for(let i=0 ; i<notas.length; i++){
-        if (req.body.Titulo==notas[i].Titulo){
+        if ((req.body.Titulo==notas[i].Titulo)&&(req.body.Estado==notas[i].Estado)&&(req.body.Descripcion==notas[i].Descripcion)){
             console.log(notas[i]);
             notas.splice(i,1);
             break
         }
     }
 })
+
+app.post('/modificar', (req : any, res : any) =>{
+    console.log("Modificando",req.body);
+    for(let i=0 ; i<notas.length; i++){
+        if ((req.body[0].Titulo==notas[i].Titulo)&&(req.body[0].Estado==notas[i].Estado)&&(req.body[0].Descripcion==notas[i].Descripcion)){
+            notas[i].Titulo = req.body[1].Titulo;
+            notas[i].Estado = req.body[1].Estado;
+            notas[i].Descripcion = req.body[1].Descripcion;
+            break
+        }
+    }
+})
+
 
 
 app.listen(port, () => {

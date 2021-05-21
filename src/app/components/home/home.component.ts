@@ -36,10 +36,11 @@ export class HomeComponent implements OnInit {
   }
   
   Eliminar(notaEliminable:Nota){
-    console.log("me quieren sacar tio",nota);
+    //console.log("me quieren sacar tio",nota);
     this.servicio.deleteNota(notaEliminable).subscribe(notas=>{
       console.log(notas); 
     });
+    window.location.reload();
   }
 
 

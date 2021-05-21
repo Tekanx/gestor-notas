@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import * as nota from '../../../assets/data.json';
 import { Nota } from '../../interfaces/nota';
 import {Form, FormBuilder,FormGroup, Validators} from '@angular/forms';
-import { ServicioNotasService } from '../../services/servicio-notas.service' 
+import { ServicioNotasService } from '../../services/servicio-notas.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-notas',
@@ -12,11 +13,11 @@ import { ServicioNotasService } from '../../services/servicio-notas.service'
 export class NotasComponent implements OnInit {
   formulario:FormGroup;
   ListaNotas = nota;
-  constructor(private fb:FormBuilder ,private servicio:ServicioNotasService) {
+  constructor(private fb:FormBuilder ,private servicio:ServicioNotasService, private router: Router) {
     this.formulario=this.fb.group({
       titulo:['',[Validators.required]],
-      estado:['0',[Validators.required]],
-      descripcion:['',[Validators.required]]
+      estado:['',[Validators.required]],
+      descripcion:['',[Validators.required,Validators.maxLength(150)]]
     });
    }
 
@@ -34,6 +35,7 @@ export class NotasComponent implements OnInit {
    this.servicio.GuardarNota(nuevaNota).subscribe(notas=>{
      console.log(notas);
    });
+   this.router.navigateByUrl('/')
    this.formulario.reset();
   }
 }

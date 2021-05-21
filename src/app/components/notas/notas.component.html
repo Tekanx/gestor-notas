@@ -1,13 +1,13 @@
-<form [formGroup]="formulario" (ngSubmit)="EnviarDatos()" method="POST">
+<form [formGroup]="formulario" (ngSubmit)="EnviarDatos()" novalidate>
     <ul>
         <li>
             <label for="titulo">Titulo<br></label>
-            <input  formControlName="titulo" type="text" placeholder="Nota">
+            <input  formControlName="titulo" type="text" placeholder="Nota" >
         </li>
         <li>
             <label for="estado">Estado<br></label>
             <select  formControlName="estado">
-                <option value="0" selected disabled >Select</option>
+                <option hidden selected >Select</option>
                 <option value="Abierto">Abierto</option>
                 <option value="Proceso">En Proceso</option>
                 <option value="Cerrado">Cerrado</option>
@@ -15,10 +15,10 @@
         </li>
         <li>
             <label for="descripcion">Descripción<br></label>
-            <textarea  formControlName="descripcion"  cols="30" rows="10" maxlength="150"></textarea>
+            <textarea  formControlName="descripcion"  cols="30" rows="10"></textarea>
         </li>
         <li>
-                <button class="button" type="submit">Agregar</button>
+            <button class="button" type="submit" [disabled]="formulario.invalid">Agregar</button>
         </li>
     </ul>
 </form>
