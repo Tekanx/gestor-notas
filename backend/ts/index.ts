@@ -45,13 +45,12 @@ app.post('/modificar', (req : any, res : any) =>{
 
 app.post('/notavieja', (req : any, res : any) =>{
     notaguardada=req.body;
-    console.log("notita: ",notaguardada);
+    console.log("notita vieja: ",notaguardada);
 
 })
 
 app.get('/notavieja', (req : any, res : any) =>{
     res.send(notaguardada);
-    console.log(`get.notavieja${notaguardada}`);
 })
 
 app.listen(port, () => {

@@ -1,18 +1,16 @@
 ul li{
     list-style-type: none;
     margin:10px;
-    font: oblique 18px cursive;
-    
+    font: oblique 18px cursive;   
 }
+
 input,select,textarea{
     margin-top:10px;
     font: oblique 65% cursive;
     border:inset;
-    
-    /*border: darkmagenta 4px wave;*/
 }
-.button{
-    
+
+.button{  
     position: relative;
     display: inline-block;
     font: oblique 15px cursive;

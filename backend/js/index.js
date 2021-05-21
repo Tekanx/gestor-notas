@@ -39,11 +39,10 @@ app.post('/modificar', function (req, res) {
 });
 app.post('/notavieja', function (req, res) {
     notaguardada = req.body;
-    console.log("notita: ", notaguardada);
+    console.log("notita vieja: ", notaguardada);
 });
 app.get('/notavieja', function (req, res) {
     res.send(notaguardada);
-    console.log("get.notavieja" + notaguardada);
 });
 app.listen(port, function () {
     console.log("App listening at http://localhost:" + port);

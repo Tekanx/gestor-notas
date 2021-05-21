@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Nota } from "../../interfaces/nota"
-import * as nota from '../../../assets/data.json';
 import { ServicioNotasService } from '../../services/servicio-notas.service';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -14,7 +13,6 @@ export class HomeComponent implements OnInit {
   ListaNotasA : Array<Nota>=[];
   ListaNotasP : Array<Nota>=[];
   ListaNotasC : Array<Nota>=[];
-  card = document.getElementById("card")
 
   constructor(private servicio : ServicioNotasService,private router: Router) {
    }
@@ -33,13 +31,9 @@ export class HomeComponent implements OnInit {
         }
       }
     })
-    console.log(this.ListaNotasA)
-    console.log(this.ListaNotasP)
-    console.log(this.ListaNotasC)
   }
   
   Eliminar(notaEliminable:Nota){
-    //console.log("me quieren sacar tio",nota);
     this.servicio.deleteNota(notaEliminable).subscribe(notas=>{
       console.log(notas); 
     });
@@ -51,17 +45,5 @@ export class HomeComponent implements OnInit {
       console.log(notas); 
     });
     this.router.navigateByUrl('/modificar-nota');
-    /*
-    let NotasModificar : Array<Nota> = []
-    let notaNew:Nota = {
-      "Titulo": "",
-      "Estado":"",
-      "Descripcion":""
-    }
-    NotasModificar.push(notaNew)
-    NotasModificar.push(nota)
-
-    this.servicio.modificarNota(NotasModificar).subscribe()
-    */
   }
 } 

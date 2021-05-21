@@ -1,4 +1,6 @@
 <ul>
+  <div class="caja-nota">
+    <h1>Abierto</h1>
     <li *ngFor = "let nota of ListaNotasA" >
       <button class="btnGigante">
         <mat-card class="card" (onRefresh(nota))=nota > 
@@ -21,7 +23,9 @@
         </mat-card>
       </button>
     </li>
-    <br>
+  </div>
+  <div class="caja-nota">
+    <h1>En Proceso</h1>
     <li *ngFor = "let nota of ListaNotasP">
       <button class="btnGigante">
         <mat-card class="card" (onRefresh(nota))=nota > 
@@ -44,7 +48,9 @@
         </mat-card>
       </button>
     </li>
-    <br>
+  </div>
+  <div class="caja-nota">
+    <h1>Cerrado</h1>
     <li *ngFor = "let nota of ListaNotasC">
       <button class="btnGigante">
         <mat-card class="card" (onRefresh(nota))=nota > 
@@ -67,6 +73,8 @@
         </mat-card>
       </button>
     </li>  
+  </div>
+    
 </ul>
 
 <div id="caja">

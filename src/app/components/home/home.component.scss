@@ -1,27 +1,119 @@
 ul li{
     list-style-type: none;
-    /*.btneliminar{
+    .btnmodificar,.btneliminar{
         display: none;
-    }*/
-    
+    }  
 }
+
+h1{
+    text-align: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-shadow: 2px 2px 7px rgba(150, 150, 150, 1);
+}
+
 .btnGigante{
     padding: 0%;
     margin: 0%;
     border-radius:20px;
     border:0px;
-
+    width: 100%;
 }
-.btnGigante:focus{
-    .btneliminar{
+
+.btnGigante:hover{
+    .btnmodificar,.btneliminar{
         display: block;
     }
 }
+
+div#caja{
+    position: fixed;
+    top: 90%;
+    left: 45%;
+}
+
+.button{
+    width: 200px;
+    position: relative;
+    display: inline-block;
+    font: oblique 20px cursive;
+    border-radius:20px;
+    background-color: rgb(252, 165, 52);
+    color:white;
+    box-shadow: 2px 2px 2px 1px rgb(157, 208, 214);    
+}
+
+ul {
+    padding-top: 2em;
+}
+
+ul li{
+    margin: 1em;
+    list-style-type: none;
+    padding: 1em;
+    flex-direction: row;   
+}
+
+.caja-nota{
+    vertical-align: top;
+    display: inline-block;
+    width: 33%;
+    height: fit-content;
+    border: 0%;
+    margin-top: 0px;
+}
+
+.card{
+    color: black;
+    border-radius:18px;
+    height: fit-content;
+    padding: 0%;
+    margin: 0%;
+    font-family: cursive;
+    font-style:oblique;
+    width: 100%;
+    float:none;  
+    box-shadow: 8px 9px 18px 1px grey;
+}
+
+mat-card-action{
+    margin: 0%;
+    padding: 0px;   
+}
+
+.div2{
+    padding-left:0%;
+}
+
+.card-titulo{
+    font-weight: bold;
+}
+
+.card-descripcion{
+    padding-bottom: 0px;;
+}
+
+.btnmodificar,.btneliminar{
+    background-color: whitesmoke;
+    color: gray;
+    position: relative;
+    bottom: 1em;
+    border-radius: 50%;
+}
+
+.btnmodificar{
+    float: right;     
+    right: 1em;    
+}
+
+.btneliminar{
+    float: left;
+    left: 1em;
+}
+
 .abierto,.enproceso,.cerrado{
     border-radius:18px;
     color: black;
-    padding:8px;
-    
+    padding:8px;  
 }
 
 .abierto{
@@ -34,69 +126,4 @@ ul li{
 
 .cerrado{
     background-color: rgb(245, 164, 164);
-}
-
-div#caja{
-    position: fixed;
-    top: 90%;
-    left: 47%;
-}
-.button{
-    width: 200px;
-    position: relative;
-    display: inline-block;
-    font: oblique 15px cursive;
-    border-radius:20px;
-    background-color: rgb(252, 165, 52);
-    color:white;
-    box-shadow: 2px 2px 2px 1px rgb(157, 208, 214);    
-}
-ul {
-    padding-top: 2em;
-}
-
-ul li{
-    display: inline-block;
-    height: max-content;
-    width: 30%;
-    list-style-type: none;
-    padding: 8px;
-}
-
-.card{
-    color: black;
-    border-radius:18px;
-    height: fit-content;
-    padding: 0%;
-    margin: 0%;
-    font-family: cursive;
-    font-style:oblique;
-    width: auto;     
-}
-mat-card-action{
-    margin: 0%;
-    padding:0px;   
-}
-
-.div2{
-    padding-left:0%;
-}
-.card-descripcion{
-    padding-bottom: 0px;;
-}
-
-.btnmodificar,.btneliminar{
-    background-color: whitesmoke;
-    color: gray;
-    position: relative;
-    bottom: 1em;
-
-}
-.btnmodificar{
-    float: right;     
-    right: 1em;    
-}
-.btneliminar{
-    float: left;
-    left: 1em;
 }

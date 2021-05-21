@@ -8,5 +8,8 @@
             <button mat-menu-item>Agregar/Actualizar Notas</button>
         </a>
     </mat-menu>
-    <span id="texto">Mis Notas</span>
+    <span id="texto">
+        <a [routerLink]="['/']" routerLinkActive="router-link-active">Mis Notas</a>
+    </span>
+    
   </mat-toolbar>

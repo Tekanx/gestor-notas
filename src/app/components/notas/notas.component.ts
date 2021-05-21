@@ -36,6 +36,5 @@ export class NotasComponent implements OnInit {
      console.log(notas);
    });
    this.router.navigateByUrl('/')
-   this.formulario.reset();
   }
 }
