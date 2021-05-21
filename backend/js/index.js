@@ -28,10 +28,10 @@ app.post('/borrar', function (req, res) {
 app.post('/modificar', function (req, res) {
     console.log("Modificando", req.body);
     for (var i = 0; i < notas.length; i++) {
-        if ((req.body[0].Titulo == notas[i].Titulo) && (req.body[0].Estado == notas[i].Estado) && (req.body[0].Descripcion == notas[i].Descripcion)) {
-            notas[i].Titulo = req.body[1].Titulo;
-            notas[i].Estado = req.body[1].Estado;
-            notas[i].Descripcion = req.body[1].Descripcion;
+        if ((req.body[1].Titulo == notas[i].Titulo) && (req.body[1].Estado == notas[i].Estado) && (req.body[1].Descripcion == notas[i].Descripcion)) {
+            notas[i].Titulo = req.body[0].Titulo;
+            notas[i].Estado = req.body[0].Estado;
+            notas[i].Descripcion = req.body[0].Descripcion;
             break;
         }
     }

@@ -1,0 +1,27 @@
+<form [formGroup]="formulario" (ngSubmit)="ModificarDatos()" novalidate>
+    <ul>
+        <li>
+            <label for="titulo">Titulo<br></label>
+            <input  formControlName="titulo" type="text">
+        </li>
+        <li>
+            <label for="estado">Estado<br></label>
+            <select  formControlName="estado">
+                <option value="Abierto">Abierto</option>
+                <option value="Proceso">En Proceso</option>
+                <option value="Cerrado">Cerrado</option>
+            </select>
+        </li>
+        <li>
+            <label for="descripcion">Descripción<br></label>
+            <textarea  formControlName="descripcion"  cols="30" rows="10"></textarea>
+        </li>
+        <li>
+            <a [routerLink]="['/']" routerLinkActive="router-link-active">
+                <button class="button">Cancelar</button>
+            </a>
+            <button class="button" type="submit" [disabled]="formulario.invalid">Modificar</button>
+
+        </li>
+    </ul>
+</form>

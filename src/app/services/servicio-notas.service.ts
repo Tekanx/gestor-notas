@@ -27,7 +27,7 @@ export class ServicioNotasService {
   }
 
   modificarNota(Notamod:Array<Nota>):Observable<any>{ 
-    console.log(Notamod); //arreglo contiene[nota original,nota modificada]
+    console.log(Notamod); //arreglo contiene[nota modificada,nota original]
     return this.service.post(`${this.url}modificar`,Notamod);
   } 
 
