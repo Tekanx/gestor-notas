@@ -6,6 +6,7 @@ const app = express()
 const port = 3000
 const bodyParser = require('body-parser');
 
+let notaguardada:any;
 app.use(cors())
 app.use(bodyParser.json({ extended: true }));
 
@@ -42,7 +43,16 @@ app.post('/modificar', (req : any, res : any) =>{
     }
 })
 
+app.post('/notavieja', (req : any, res : any) =>{
+    notaguardada=req.body;
+    console.log("notita: ",notaguardada);
 
+})
+
+app.get('/notavieja', (req : any, res : any) =>{
+    res.send(notaguardada);
+    console.log(`get.notavieja${notaguardada}`);
+})
 
 app.listen(port, () => {
     console.log(`App listening at http://localhost:${port}`)

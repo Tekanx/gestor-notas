@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Nota } from "../../interfaces/nota"
 import * as nota from '../../../assets/data.json';
-import { ServicioNotasService } from '../../services/servicio-notas.service'
+import { ServicioNotasService } from '../../services/servicio-notas.service';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class HomeComponent implements OnInit {
   ListaNotasC : Array<Nota>=[];
   card = document.getElementById("card")
 
-  constructor(private servicio : ServicioNotasService) {
+  constructor(private servicio : ServicioNotasService,private router: Router) {
    }
 
   ngOnInit(): void {
@@ -33,6 +34,8 @@ export class HomeComponent implements OnInit {
       }
     })
     console.log(this.ListaNotasA)
+    console.log(this.ListaNotasP)
+    console.log(this.ListaNotasC)
   }
   
   Eliminar(notaEliminable:Nota){
@@ -43,22 +46,22 @@ export class HomeComponent implements OnInit {
     window.location.reload();
   }
 
+  Editar(nota : Nota){
+    this.servicio.notaVieja(nota).subscribe(notas=>{
+      console.log(notas); 
+    });
+    this.router.navigateByUrl('/modificar-nota');
+    /*
+    let NotasModificar : Array<Nota> = []
+    let notaNew:Nota = {
+      "Titulo": "",
+      "Estado":"",
+      "Descripcion":""
+    }
+    NotasModificar.push(notaNew)
+    NotasModificar.push(nota)
 
-  onRefresh(nota : Nota){
-    switch(nota.Estado){
-          case "Abierto": {
-            if(this.card != null) this.card.style.backgroundColor="blue"
-            break;
-          }
-          case "Proceso": {
-            if(this.card != null) this.card.style.backgroundColor="yellow"
-            break;
-          }
-          case "Cerrado": {
-            if(this.card != null) this.card.style.backgroundColor="red"
-            break;
-          }
-        }
-        
+    this.servicio.modificarNota(NotasModificar).subscribe()
+    */
   }
 } 

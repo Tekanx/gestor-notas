@@ -30,5 +30,14 @@ export class ServicioNotasService {
     console.log(Notamod); //arreglo contiene[nota modificada,nota original]
     return this.service.post(`${this.url}modificar`,Notamod);
   } 
+  notaVieja(notavieja:Nota):Observable<any>{ 
+    console.log(notavieja);
+    return this.service.post(`${this.url}notavieja`,notavieja);
+  }
+
+  getNotaVieja() : Observable<any>{
+    return this.service.get(`${this.url}notavieja`)
+  }
+
 
 }

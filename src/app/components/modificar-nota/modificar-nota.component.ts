@@ -12,21 +12,31 @@ import {Router} from '@angular/router';
 export class ModificarNotaComponent implements OnInit {
   formulario:FormGroup;
   antiguaNota:Nota={
-    "Titulo": "Arreglar colores",
-    "Estado": "Proceso",
-    "Descripcion":"clasificar por colorcito"
+    "Titulo": "",
+    "Estado": "",
+    "Descripcion":""
+  }
+
+  ngOnInit(): void {
+    this.servicio.getNotaVieja().subscribe((nota:Nota) =>{
+      this.antiguaNota=nota;
+      console.log("Notita en servicio: ", nota)
+      this.formulario=this.fb.group({
+        titulo:[this.antiguaNota.Titulo,[Validators.required]],
+        estado:[this.antiguaNota.Estado,[Validators.required]],
+        descripcion:[this.antiguaNota.Descripcion,[Validators.required,Validators.maxLength(150)]]
+      });
+    })
   }
 
   constructor(private fb:FormBuilder ,private servicio:ServicioNotasService, private router: Router) {
     this.formulario=this.fb.group({
-      titulo:[this.antiguaNota.Titulo,[Validators.required]],
-      estado:[this.antiguaNota.Estado,[Validators.required]],
-      descripcion:[this.antiguaNota.Descripcion,[Validators.required,Validators.maxLength(150)]]
+      titulo:[[Validators.required]],
+      estado:[[Validators.required]],
+      descripcion:[[Validators.required,Validators.maxLength(150)]]
     });
    }
 
-  ngOnInit(): void {
-  }
 
   ModificarDatos(){  
     let NotasNV:Array<Nota>=[{

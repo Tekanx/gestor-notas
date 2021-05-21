@@ -5,6 +5,7 @@ var notas = require('../../src/assets/data.json');
 var app = express();
 var port = 3000;
 var bodyParser = require('body-parser');
+var notaguardada;
 app.use(cors());
 app.use(bodyParser.json({ extended: true }));
 app.get('/', function (req, res) {
@@ -35,6 +36,14 @@ app.post('/modificar', function (req, res) {
             break;
         }
     }
+});
+app.post('/notavieja', function (req, res) {
+    notaguardada = req.body;
+    console.log("notita: ", notaguardada);
+});
+app.get('/notavieja', function (req, res) {
+    res.send(notaguardada);
+    console.log("get.notavieja" + notaguardada);
 });
 app.listen(port, function () {
     console.log("App listening at http://localhost:" + port);

@@ -13,7 +13,7 @@
             </mat-card-content>
             <mat-card-actions>
               <div *ngIf="nota.Estado!='Cerrado'">
-                <button mat-button class="btnmodificar" ><span class="material-icons">edit</span></button>
+                <button mat-button class="btnmodificar" (click)="Editar(nota)"><span class="material-icons">edit</span></button>
               </div>
               <button mat-button class="btneliminar" (click)="Eliminar(nota)"><span class="material-icons">delete</span></button>
             </mat-card-actions>
@@ -36,7 +36,7 @@
             </mat-card-content>
             <mat-card-actions>
               <div *ngIf="nota.Estado!='Cerrado'">
-                <button mat-button class="btnmodificar" ><span class="material-icons">edit</span></button>
+                <button mat-button class="btnmodificar" (click)="Editar(nota)"><span class="material-icons">edit</span></button>
               </div>
               <button mat-button class="btneliminar" (click)="Eliminar(nota)"><span class="material-icons">delete</span></button>
             </mat-card-actions>
@@ -59,7 +59,7 @@
             </mat-card-content>
             <mat-card-actions>
               <div *ngIf="nota.Estado!='Cerrado'">
-                <button mat-button class="btnmodificar" ><span class="material-icons">edit</span></button>
+                <button mat-button class="btnmodificar" (click)="Editar(nota)"><span class="material-icons">edit</span></button>
               </div>
               <button mat-button class="btneliminar" (click)="Eliminar(nota)"><span class="material-icons">delete</span></button>
             </mat-card-actions>
